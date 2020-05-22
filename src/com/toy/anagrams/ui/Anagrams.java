@@ -112,6 +112,7 @@ public class Anagrams extends JFrame {
         buttonsPanel = new javax.swing.JPanel();
         guessButton = new javax.swing.JButton();
         nextTrial = new javax.swing.JButton();
+        hintbutton=new javax.swing.JButton();
         levelLabel = new javax.swing.JLabel();
         selectLevel = new javax.swing.JComboBox();
         mainMenu = new javax.swing.JMenuBar();
@@ -198,6 +199,17 @@ public class Anagrams extends JFrame {
         });
         buttonsPanel.add(nextTrial, new java.awt.GridBagConstraints());
 
+        hintbutton.setMnemonic('S');
+        
+        hintbutton.setText("ヒント");
+        hintbutton.setToolTipText("Hint.");
+        hintbutton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+            	hintbuttonActionPerformed(evt);
+            }
+        });
+        buttonsPanel.add(hintbutton, new java.awt.GridBagConstraints());
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
@@ -214,6 +226,7 @@ public class Anagrams extends JFrame {
 
         selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
+        
         
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
@@ -266,8 +279,12 @@ public class Anagrams extends JFrame {
         
         guessedWord.requestFocusInWindow();
         
-        feedbackLabel.setText("Hint :"+wordLibrary.getHint(wordIdx));
     }//GEN-LAST:event_nextTrialActionPerformed
+    private void hintbuttonActionPerformed(java.awt.event.ActionEvent evt) {
+    	feedbackLabel.setText("Hint :"+wordLibrary.getHint(wordIdx));
+    	 getRootPane().setDefaultButton(guessButton);
+    	guessedWord.requestFocusInWindow();
+    }
    
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
@@ -306,6 +323,7 @@ public class Anagrams extends JFrame {
     private javax.swing.JLabel scrambledLabel;
     private javax.swing.JTextField scrambledWord;
     private javax.swing.JComboBox selectLevel;
+    private javax.swing.JButton hintbutton;
     // End of variables declaration//GEN-END:variables
 
 }
