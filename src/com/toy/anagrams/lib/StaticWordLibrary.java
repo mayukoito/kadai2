@@ -60,6 +60,7 @@ final class StaticWordLibrary extends WordLibrary {
         "indistinguishable",
         "inheritance",
         "internet",
+        "intiraymi",
         "java",
         "localization",
         "microprocessor",
