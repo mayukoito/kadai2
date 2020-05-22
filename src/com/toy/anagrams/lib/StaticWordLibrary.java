@@ -39,6 +39,7 @@ import java.util.Collections;
 import java.util.ArrayList;
 
 final class StaticWordLibrary extends WordLibrary {
+	String [] w;
 
     private static final String[] WORD_LIST = {
         "abstraction",
@@ -183,7 +184,7 @@ final class StaticWordLibrary extends WordLibrary {
     public String getScrambledWord(int idx) {
     	ArrayList<Integer> list=new ArrayList<Integer>();   	
     	int word=WORD_LIST[idx].length();
-    	String[] w=new String[word];
+    	w=new String[word];
     	String[] strArray=WORD_LIST[idx].split("");
     	for(int i=0;i<word;i++) {
     		list.add(i);
@@ -195,5 +196,12 @@ final class StaticWordLibrary extends WordLibrary {
     	String w2=String.join("", w);
     	return w2;
     }
-
+    public String getHint(int idx) {
+    	int word=WORD_LIST[idx].length();
+    	w=new String[word];
+    	String[] strArray=WORD_LIST[idx].split("");
+    	return strArray[0];
+    	
+    	
+    }
 }
