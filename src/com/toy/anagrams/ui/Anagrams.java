@@ -200,6 +200,7 @@ public class Anagrams extends JFrame {
         buttonsPanel.add(nextTrial, new java.awt.GridBagConstraints());
 
         hintbutton.setMnemonic('S');
+        
         hintbutton.setText("ヒント");
         hintbutton.setToolTipText("Hint.");
         hintbutton.addActionListener(new java.awt.event.ActionListener() {
