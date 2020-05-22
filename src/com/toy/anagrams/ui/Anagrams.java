@@ -165,7 +165,7 @@ public class Anagrams extends JFrame {
         gridBagConstraints.insets = new java.awt.Insets(0, 0, 20, 0);
         mainPanel.add(guessedWord, gridBagConstraints);
 
-        feedbackLabel.setText("aaaaaaaaaaaaaa");
+        
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
@@ -214,6 +214,7 @@ public class Anagrams extends JFrame {
 
         selectLevel.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Level 1", "Level 2", "Level 3" }));
         gridBagConstraints = new java.awt.GridBagConstraints();
+        
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
@@ -258,12 +259,16 @@ public class Anagrams extends JFrame {
 
         feedbackLabel.setText(" ");
         scrambledWord.setText(wordLibrary.getScrambledWord(wordIdx));
+        
         guessedWord.setText("");
+        
         getRootPane().setDefaultButton(guessButton);
-
+        
         guessedWord.requestFocusInWindow();
+        
+        feedbackLabel.setText("Hint :"+wordLibrary.getHint(wordIdx));
     }//GEN-LAST:event_nextTrialActionPerformed
-
+   
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
